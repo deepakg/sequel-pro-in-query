@@ -4,7 +4,7 @@ Sometimes you need to query a table in one database, and use the values returned
 
 Installation:
 -------------
-Clone this repository and double-click the the CopyAsIN.spbundle file. This should launch Sequel Pro and take care of the installation automatically.
+Clone this repository (or download it as a zip file) and double-click the the CopyAsIN.spbundle file. This should launch Sequel Pro and take care of the installation automatically.
 
 Usage:
 ------
