@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>author</key>
+	<string>Deepak Gulati</string>
+	<key>category</key>
+	<string></string>
+	<key>command</key>
+	<string>cat | perl -e '
+
+my $firstline = &lt;&gt;;
+if (!defined $firstline) {
+	exit 0;
+}
+
+my $str = "";
+my @in  = ();
+while (my $row = &lt;&gt;) {
+	chomp($row);
+    my @cols = split(/\t/, $row);
+    if ($cols[0] =~ /^[0-9]+$/) {
+    	push @in, $cols[0];
+    }
+    else {
+        my $single_quote = chr(39);
+        $cols[0] =~ s/$single_quote/$single_quote$single_quote/g;
+        push @in, chr(39) . $cols[0] . chr(39);
+    }
+}
+
+my $output = join ",", @in;
+print "($output)";
+
+' | __CF_USER_TEXT_ENCODING=$UID:0x8000100:0x8000100 pbcopy
+
+
+</string>
+	<key>contact</key>
+	<string>uggc://tvguho.pbz/qrrcnxt</string>
+	<key>description</key>
+	<string>This bundle copies the selected rows into a string of comma separated values that you can paste into an IN query. It assumes that only one column is selected. If your selection spans more than one column, only the first one is used.
+
+e.g. if your selection contains 
+10
+20
+30
+40
+
+you get:
+
+(10,20,30,40)
+
+and if it contains:
+
+alpha
+bravo
+charlie
+delta
+
+you get:
+('alpha','bravo','charlie','delta')</string>
+	<key>input</key>
+	<string>selectedtablerowsastab</string>
+	<key>keyEquivalent</key>
+	<string></string>
+	<key>name</key>
+	<string>Copy for IN query</string>
+	<key>output</key>
+	<string>none</string>
+	<key>scope</key>
+	<string>datatable</string>
+	<key>uuid</key>
+	<string>8E62A38A-9163-4E73-846E-3B7DE4E87BFF</string>
+</dict>
+</plist>
