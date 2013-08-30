@@ -8,5 +8,5 @@ Clone this repository and double-click the the CopyAsIN.spbundle file. This shou
 
 Usage:
 ------
-The following animated gif shows how an example of how you can use it:
-
+The following animated gif shows an example of how you can use it:
+![screencast showing usage](https://raw.github.com/deepakg/sequel-pro-in-query/master/img/screencast.gif)
